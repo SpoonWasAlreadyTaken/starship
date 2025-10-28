@@ -2,14 +2,33 @@ format = """
 $directory\
 $git_branch\
 $fill\
-"""
+$jobs\
+$cmd_duration\
+$line_break\
+$character"""
 
 [directory]
-format = '[$path ](fg:#121315 bg:cyan bold)[](fg:cyan bg:#121315)'
+format = '[$path ](fg:#121315 bg:#e97dff bold)[](fg:#e97dff bg:#121315)'
 truncation_symbol = '.../'
 
 [git_branch]
-format = '[](fg:purple bg:121315)[ $symbol$branch(:$remote_branch) ](fg:black bg:purple bold)[](fg:purple bg:#121315)'
+format = '[](fg:#d270e6 bg:#121315)[ $symbol$branch(:$remote_branch) ](fg:#121315 bg:#d270e6 bold)[](fg:#d270e6 bg:#121315)'
 
+[fill]
+symbol = " "
 
-# 
+[character]
+success_symbol = "[](fg:#121315 bg:#ff7c36)[](fg:#ff7c36 bg:#121315)"
+error_symbol = "[](fg:#121315 bg:#e62946)[](fg:#e62946 bg:#121315)"
+vimcmd_symbol = "[](fg:#121315 bg:#ff7c36)[](fg:#ff7c36 bg:#121315)"
+
+[jobs]
+symbol_threshold = 0
+number_threshold = 1
+format = '[](fg:#bb64cc bg:#121315)[$symbol$number](fg:#121315 bg:#bb64cc bold)[](fg:#bb64cc bg:#121315)'
+
+[cmd_duration]
+min_time = 0
+show_milliseconds = true
+format = '[](fg:#8c4b99 bg:#121315)[ $duration ](fg:#121315 bg:#8c4b99 bold)'
+
