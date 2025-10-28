@@ -1,2 +1,15 @@
-format = """
-$character"""
+format = """  
+$directory\
+$git_branch\
+$fill\
+"""
+
+[directory]
+format = '[$path ](fg:#121315 bg:cyan bold)[](fg:cyan bg:#121315)'
+truncation_symbol = '.../'
+
+[git_branch]
+format = '[](fg:purple bg:121315)[ $symbol$branch(:$remote_branch) ](fg:black bg:purple bold)[](fg:purple bg:#121315)'
+
+
+# 
